@@ -1,14 +1,13 @@
 name: Playwright Tests
 on:
   schedule:
-    - cron: '0 * * * 0,6'
+    - cron: '0 */1 * * *'
 
   workflow_dispatch:
     inputs:
       deployment_target:
         description: Choose target
         required: true
-        default:
         type: choice
         options:
           - Run tests
