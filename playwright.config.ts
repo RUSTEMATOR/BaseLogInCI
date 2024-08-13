@@ -30,9 +30,9 @@ export default defineConfig({
     viewport: { width: 1280, height: 720 },
 
     proxy: {
-      'server': 'http://138.197.150.103:8090',
-      'username': 'kbc',
-      'password': '347SP&Uwqt!2xZ7w',
+      'server': SERVER_IP: ${{secrets.SERVER_IP}},
+      'username': PROXY_USERNAME: ${{secrets.PROXY_USERNAME}},
+      'password': PROXY_PASSWORD: ${{secrets.PROXY_PASSWORD}},
     },
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
