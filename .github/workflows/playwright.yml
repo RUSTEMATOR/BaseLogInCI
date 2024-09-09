@@ -40,7 +40,7 @@ jobs:
         username: ${{ secrets.SMTP_USERNAME }}
         password: ${{ secrets.SMTP_PASSWORD }}
         subject: GitHub Actions Workflow Failed
-        to: ross@kingbilly.com
+        to: ${{ secrets.ROSS_EMAIL }}, ${{ secrets.PRODUCT_EMAIL }}, ${{ secrets.LEAD_EMAIL }}, ${{ secrets.MYKHAIL_EMAIL }}
         from: ${{ secrets.SMTP_USERNAME }}
         body: |
           THE TEST FAILED. TR IS PROBABLY DEAD!!!!
