@@ -30,6 +30,22 @@ jobs:
         PROXY_USERNAME: ${{ secrets.PROXY_USERNAME }}
         PROXY_PASSWORD: ${{ secrets.PROXY_PASSWORD }}
       run: npx playwright test
+
+    - name: Send email on failure
+        if: failure() # This condition ensures the email is sent only if previous steps fail
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.google.com
+          server_port: 587
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: GitHub Actions Workflow Failed
+          to: ross@kingbilly.com
+          from: ${{SMTP_USERNAME}}
+          body: |
+            THE TEST FAILED. TR IS PROBABLY DEAD!!!!
+
+
     - uses: actions/upload-artifact@v4
       if: always()
       with:
