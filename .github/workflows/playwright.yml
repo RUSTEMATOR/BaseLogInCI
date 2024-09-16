@@ -51,7 +51,7 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: "TR IS DEAD!!! TESTS FAILED"
+        message: "LOG IN TEST FAILED!!! BETTER CHECK TR"
 
 
     - uses: actions/upload-artifact@v4
