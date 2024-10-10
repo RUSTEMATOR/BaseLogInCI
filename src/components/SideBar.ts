@@ -12,7 +12,6 @@ export default class SideBar extends BaseComponent{
     
     this.container = page.locator('aside > div')
 
-    this.depositBtn = this.container.locator('button.btn', {hasText: 'Deposit'})
-
+    this.depositBtn = page.locator("xpath=//div[contains(@class, 'mb-3')]/button[contains(@class, 'button-primary ')]")
     }
 }

@@ -30,6 +30,9 @@ test.describe('BaseLogIn', () => {
         await logInPopUp.fillPassword(password)
         await logInPopUp.submitLogInBtn()
 
+        await page.pause()
+        
+
         await expect(sideBar.depositBtn).toBeVisible()
         await expect(page.locator('div.content > div > h1').filter({hasText: 'Tomb Riches Casino'})).toBeVisible()
 
