@@ -19,7 +19,7 @@ export default class LogInPopUp extends BaseComponent {
         this.passwordInput = page.locator('#password')
         this.emailField = page.getByText('E-mail')
         this.passwordField = page.getByText('Password')
-        this.subitLoginBtn = page.locator("xpath=//div/div/button[contains(@class, 'button-secondary') and contains(text(), 'Log in')]")
+        this.subitLoginBtn = page.locator("xpath=//div[contains(@class, 'flex')]//div[contains(@class, 'mb-5')]/following-sibling::button[contains(@class, 'button-secondary')]")
     } 
 
     async fillEmail(email: string) {
