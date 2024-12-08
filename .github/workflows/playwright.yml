@@ -40,18 +40,18 @@ jobs:
         username: ${{ secrets.SMTP_USERNAME }}
         password: ${{ secrets.SMTP_PASSWORD }}
         subject: GitHub Actions Workflow Failed
-        to: ${{ secrets.ROSS_EMAIL }}, ${{ secrets.PRODUCT_EMAIL }}, ${{ secrets.LEAD_EMAIL }}, ${{ secrets.MYKHAIL_EMAIL }}
+        to: ${{ secrets.ROSS_EMAIL }}, ${{ secrets.LEAD_EMAIL }}, ${{ secrets.MYKHAIL_EMAIL }}
         from: ${{ secrets.SMTP_USERNAME }}
         body: |
           THE TEST FAILED. TR IS PROBABLY DEAD!!!!
 
-    - name: send default message
-      if: failure()
-      uses: appleboy/telegram-action@master
-      with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: "LOG IN TEST FAILED!!! BETTER CHECK TR"
+    # - name: send default message
+    #   if: failure()
+    #   uses: appleboy/telegram-action@master
+    #   with:
+    #     to: ${{ secrets.TELEGRAM_TO }}
+    #     token: ${{ secrets.TELEGRAM_TOKEN }}
+    #     message: "LOG IN TEST FAILED!!! BETTER CHECK TR"
 
 
     - uses: actions/upload-artifact@v4
